@@ -59,3 +59,6 @@ resultado = valor × (cotação de A em reais ÷ cotação de B em reais)
 ## Aviso
 
 Projeto de estudo. Os dados podem ter atraso e não são recomendação de investimento.
+
+
+Site de referencia: bolsavaloresemoedas.netlify.app

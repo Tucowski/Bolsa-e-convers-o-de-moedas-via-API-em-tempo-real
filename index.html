@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Câmbio & Bolsa</title>
+  <meta name="description" content="Conversor de moedas e cotações da bolsa brasileira em tempo real." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topo">
+    <h1>Câmbio <span>&</span> Bolsa</h1>
+    <p>Conversor de moedas e cotações de ações da B3</p>
+  </header>
+
+  <main>
+    <!-- CONVERSOR -->
+    <section class="card" id="conversor">
+      <h2>Conversor de moedas</h2>
+
+      <div class="linha">
+        <label for="valor">Valor</label>
+        <input type="number" id="valor" value="100" min="0" step="any" inputmode="decimal" />
+      </div>
+
+      <div class="par">
+        <div class="linha">
+          <label for="de">De</label>
+          <select id="de"></select>
+        </div>
+
+        <button id="inverter" type="button" aria-label="Inverter moedas" title="Inverter">⇄</button>
+
+        <div class="linha">
+          <label for="para">Para</label>
+          <select id="para"></select>
+        </div>
+      </div>
+
+      <div class="resultado" aria-live="polite">
+        <div id="resultado-valor">—</div>
+        <small id="resultado-detalhe">Carregando cotações...</small>
+      </div>
+    </section>
+
+    <!-- COTAÇÕES EM REAIS -->
+    <section class="card">
+      <div class="cabecalho">
+        <h2>Moedas em reais</h2>
+        <button id="atualizar-moedas" type="button" class="secundario">Atualizar</button>
+      </div>
+      <div id="grade-moedas" class="grade"></div>
+      <small id="moedas-atualizado" class="nota"></small>
+    </section>
+
+    <!-- BOLSA -->
+    <section class="card">
+      <div class="cabecalho">
+        <h2>Bolsa de valores (B3)</h2>
+        <button id="atualizar-acoes" type="button" class="secundario">Atualizar</button>
+      </div>
+
+      <form id="form-busca" class="busca">
+        <input type="text" id="ticker" placeholder="Ex.: PETR4" maxlength="8" autocomplete="off" />
+        <button type="submit">Buscar ação</button>
+      </form>
+
+      <div class="tabela-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Ativo</th>
+              <th>Preço</th>
+              <th>Variação</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody id="tabela-acoes"></tbody>
+        </table>
+      </div>
+      <small id="acoes-aviso" class="nota"></small>
+    </section>
+  </main>
+
+  <footer>
+    <p>
+      Dados: <a href="https://docs.awesomeapi.com.br/api-de-moedas" target="_blank" rel="noopener">AwesomeAPI</a>
+      e <a href="https://brapi.dev" target="_blank" rel="noopener">brapi.dev</a>.
+      Apenas informativo, não é recomendação de investimento.
+    </p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

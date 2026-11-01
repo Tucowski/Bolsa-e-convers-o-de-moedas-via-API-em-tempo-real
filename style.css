@@ -176,6 +176,36 @@ td button.remover {
   color: var(--suave);
 }
 
+[hidden] { display: none !important; }
+
+button.pequeno { padding: 4px 12px; font-size: 0.8rem; }
+
+tr.selecionada { background: rgba(61, 220, 151, 0.08); }
+
+details.token { margin-bottom: 14px; }
+details.token summary {
+  cursor: pointer;
+  color: var(--destaque);
+  font-size: 0.9rem;
+}
+details.token .nota { margin: 8px 0; }
+details.token a { color: var(--destaque); }
+
+.periodo { width: auto; padding: 8px 12px; font-size: 0.9rem; }
+
+.resumo {
+  color: var(--suave);
+  font-size: 0.9rem;
+  margin-bottom: 12px;
+}
+
+.tabela-historico { max-height: 420px; overflow-y: auto; }
+.tabela-historico thead th {
+  position: sticky;
+  top: 0;
+  background: var(--card);
+}
+
 footer {
   text-align: center;
   color: var(--suave);

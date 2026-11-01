@@ -7,6 +7,7 @@ Conversor de moedas e painel de cotações da bolsa brasileira (B3), feito com H
 - Converte entre 9 moedas (real, dólar, euro, libra, iene, peso argentino, dólar canadense, franco suíço e bitcoin)
 - Mostra cotações das moedas em reais, com variação do dia
 - Acompanha ações da B3 com preço e variação
+- Mostra uma tabela de histórico de cada ação (5 dias, 1 mês ou 3 meses), com a subida ou descida de cada dia e o resumo do período
 - Permite adicionar e remover ações; a lista fica salva no navegador (localStorage)
 - Layout responsivo, funciona bem no celular
 
@@ -31,10 +32,10 @@ npx serve .
 
 Sem token, a brapi.dev libera apenas **PETR4, VALE3, ITUB4 e MGLU3**. Para consultar outras ações:
 
-1. Crie uma conta em [brapi.dev](https://brapi.dev) e gere um token.
-2. Cole o token na constante `BRAPI_TOKEN` no início do `script.js`.
+1. Crie uma conta gratuita em [brapi.dev](https://brapi.dev) e gere um token.
+2. No site, abra "Tenho um token da brapi.dev", cole o token e clique em Salvar.
 
-> Em um site público, o token fica visível no código. Para uso real, o ideal é chamar a API por um backend.
+O token fica guardado apenas no navegador de quem o digitou (localStorage) e não vai para o código do repositório. Se preferir, também dá para colocá-lo na constante `BRAPI_TOKEN` no início do `script.js`, mas aí ele ficaria público se o repositório for público.
 
 ## Como o conversor calcula
 
@@ -59,6 +60,3 @@ resultado = valor × (cotação de A em reais ÷ cotação de B em reais)
 ## Aviso
 
 Projeto de estudo. Os dados podem ter atraso e não são recomendação de investimento.
-
-
-Site de referencia: bolsavaloresemoedas.netlify.app

@@ -65,6 +65,20 @@
         <button type="submit">Buscar ação</button>
       </form>
 
+      <details class="token">
+        <summary>Tenho um token da brapi.dev</summary>
+        <p class="nota">
+          Sem token só funcionam PETR4, VALE3, ITUB4 e MGLU3. Com um token gratuito
+          (crie em <a href="https://brapi.dev" target="_blank" rel="noopener">brapi.dev</a>) você busca outras ações.
+          Ele fica salvo só no seu navegador.
+        </p>
+        <div class="busca">
+          <input type="password" id="token" placeholder="Cole seu token aqui" autocomplete="off" />
+          <button id="salvar-token" type="button">Salvar</button>
+        </div>
+        <small id="token-status" class="nota"></small>
+      </details>
+
       <div class="tabela-wrap">
         <table>
           <thead>
@@ -72,6 +86,7 @@
               <th>Ativo</th>
               <th>Preço</th>
               <th>Variação</th>
+              <th>Histórico</th>
               <th></th>
             </tr>
           </thead>
@@ -79,6 +94,34 @@
         </table>
       </div>
       <small id="acoes-aviso" class="nota"></small>
+    </section>
+    <!-- HISTÓRICO DA AÇÃO -->
+    <section class="card" id="historico" hidden>
+      <div class="cabecalho">
+        <h2 id="historico-titulo">Histórico</h2>
+        <select id="periodo" class="periodo" aria-label="Período">
+          <option value="5d">5 dias</option>
+          <option value="1mo" selected>1 mês</option>
+          <option value="3mo">3 meses</option>
+        </select>
+      </div>
+
+      <p id="historico-resumo" class="resumo" aria-live="polite"></p>
+
+      <div class="tabela-wrap tabela-historico">
+        <table>
+          <thead>
+            <tr>
+              <th>Data</th>
+              <th>Fechamento</th>
+              <th>Variação (R$)</th>
+              <th>Variação (%)</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody id="tabela-historico"></tbody>
+        </table>
+      </div>
     </section>
   </main>
 
